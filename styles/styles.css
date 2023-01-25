@@ -3,21 +3,24 @@
   margin: 0 auto;
   font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
 }
-* {
-  box-sizing: border-box;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+ * {
+  box-sizing:  border-box;
+ }
 
 .header {
   background-image: url('../images/bgimageLarge.jpg');
   background-size: cover;
   padding: 48px 24px 44px 24px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
-.header__logo {
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
 }
 
@@ -50,7 +53,6 @@
 	border-radius: 50%;
 	border: solid 1px #E3E4F1;
 	transition: 0.5s;
-  box-sizing: border-box;
 }
 
 .block__input-checkbox[type="checkbox"]:checked + .block__label::before {
@@ -69,7 +71,5 @@
   color: #9495A5;
   outline: none;
   margin-left: 12px;
+
 }
-
-
-
