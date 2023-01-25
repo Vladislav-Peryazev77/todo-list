@@ -33,7 +33,7 @@
 
 .block {
   width: 100%;
-  padding: 0 20px;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
   background: #FFFFFF;
@@ -56,7 +56,7 @@
 }
 
 .block__input-checkbox[type="checkbox"]:checked + .block__label::before {
-	background-image: url('../images/check-mark.jpg');
+	background-image: url('../images/check-mark.svg');
 	background-size: 100%;
 }
 
@@ -73,3 +73,5 @@
   margin-left: 12px;
 
 }
+
+
