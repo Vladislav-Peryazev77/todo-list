@@ -26,9 +26,10 @@
 
 .header__button {
   padding: 0;
-  width: 10%;
+  width: 20px;
+  height: 20px;
   border: none;
-  background: url('../images/mesyac.svg') no-repeat top right;
+  background: url('../images/crescent.svg') no-repeat top right;
 }
 
 .block {
@@ -71,7 +72,8 @@
   color: #9495A5;
   outline: none;
   margin-left: 12px;
-
+  width: 100%;
 }
+
 
 
