@@ -125,6 +125,7 @@
   letter-spacing: -0.166667px;
   color: #9495A5;
 }
+
 .interaction {
   display: flex;
   justify-content: center;
@@ -138,9 +139,32 @@
   box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   margin-bottom: 40px;
 }
+.interaction__content {
+  width: 166px;
+  display: flex;
+  justify-content: space-between;
+}
 .main__interaction {
   margin-bottom: 40px;
 }
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 72px;
+}
+.footer__interaction {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: -0.194444px;
+
+  color: #9495A5;
+}
+
 
 
 
