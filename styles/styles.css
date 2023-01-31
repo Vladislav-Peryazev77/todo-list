@@ -85,7 +85,8 @@
   padding: 0 24px;
 }
 .main__tasks {
-  margin-top: -10px;
+  position: relative;
+  top: -25px;
   align-items: stretch;
   min-height: 368px;
   flex-wrap: wrap;
@@ -178,6 +179,14 @@
   color: #9495A5;
 }
 
+.hidden {
+  display: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  width: 166px;
+}
+
  @media (min-width: 640px) {
   .header {
     padding: 70px 0 78px;
@@ -197,6 +206,16 @@
   .block {
     padding: 20px 24px;
   }
+  .hidden {
+    padding: 0;
+    display: flex;
+  }
+  .interaction {
+    justify-content: space-between;
+  }
+  .main__interaction {
+    display: none;
+  }
   .block__input-text, .task__description {
     margin-left: 24px;
     font-weight: 400;
@@ -208,6 +227,11 @@
     margin-bottom: 49px;
   }
  }
+ /* @media (min-width: 375px) {
+  .hidden {
+    display: none;
+  }
+ } */
 
 
 
