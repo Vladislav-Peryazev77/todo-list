@@ -91,17 +91,23 @@
               5 items left
             </span>
             <div class="block interaction hidden">
-              <div class="interaction__content">
-                <span class="interaction__select-all">
-                  All
-                </span>
-                <span class="interaction__select-active">
-                  Active
-                </span>
-                <span class="interaction__select-completed">
-                  Completed
-                </span>
-              </div>
+              <ul class="interaction__content">
+                <li>
+                  <button class="interaction__select-all">
+                    All
+                  </button>
+                </li>
+                <li>
+                  <button class="interaction__select-active">
+                    Active
+                  </button>
+                </li>
+                <li>
+                  <button class="interaction__select-completed">
+                    Completed
+                  </button>
+                </li>
+              </ul>
             </div>
             <span class="task__clear">
               Clear Completed
@@ -123,12 +129,12 @@
             </div>
           </div>
         </div>
-        <footer class="footer">
-          <span class="footer__interaction">
-            Drag and drop to reorder list
-          </span>
-        </footer>
       </div>
+      <footer class="footer">
+        <span class="footer__interaction">
+          Drag and drop to reorder list
+        </span>
+      </footer>
     </div>
   </body>
 </html>
