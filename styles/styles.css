@@ -26,14 +26,15 @@
 
 .header__button {
   padding: 0;
-  width: 10%;
+  width: 20px;
+  height: 20px;
   border: none;
-  background: url('../images/mesyac.svg') no-repeat top right;
+  background: url('../images/crescent.svg') no-repeat top right;
 }
 
 .block {
   width: 100%;
-  padding: 0 20px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   background: #FFFFFF;
@@ -56,7 +57,7 @@
 }
 
 .block__input-checkbox[type="checkbox"]:checked + .block__label::before {
-	background-image: url('../images/check-mark.jpg');
+	background-image: url('../images/check-mark.svg');
 	background-size: 100%;
 }
 
@@ -71,5 +72,75 @@
   color: #9495A5;
   outline: none;
   margin-left: 12px;
+  width: 100%;
 
 }
+.main {
+  height: 368px;
+  background: #FAFAFA;
+  padding: 0 24px;
+}
+.main__tasks {
+  align-items: stretch;
+  min-height: 368p;
+  flex-wrap: wrap;
+  display: flex;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  margin-bottom: 16px;
+}
+.tasks__task {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E3E4F1;
+}
+.task__description {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #494C6B;
+  margin-left: 12px;
+}
+.task__button {
+  border: none;
+  background: #fff;
+  margin-left: auto;
+}
+.task__amount {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #9495A5;
+}
+.task__clear {
+  margin-left: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: right;
+  letter-spacing: -0.166667px;
+  color: #9495A5;
+}
+.interaction {
+  display: flex;
+  justify-content: center;
+  padding: 15px 80px 15px 81px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: -0.194444px;
+  color: #9495A5;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  margin-bottom: 40px;
+}
+.main__interaction {
+  margin-bottom: 40px;
+}
+
+
+
