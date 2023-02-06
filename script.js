@@ -39,17 +39,16 @@ createNewTodo.addEventListener('blur', function func() {
     task.remove();
   });
   this.value = '';
-  console.log(tasks.length);
+  let element = mainTask.querySelectorAll('.block__input-checkbox');
+  let taskAmount = document.querySelector('.task__amount');
+  taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
 });
-// let taskButtonDone = document.querySelector('.block__input-checkbox')
-// taskButtonDone.addEventListener('change', (event) => {
-//   console.log('!!');
-// });
-// let labelBlock = document.querySelector('.block__label');
-// labelBlock.addEventListener('click', function() {
-//   taskButtonDone.checked = true;
-//   console.log();
-// });
+
+
+
+
+
+
 
 
 
