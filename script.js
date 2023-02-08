@@ -1,10 +1,9 @@
 "use strict";
-let createNewTodo = document.querySelector('.block__input-text');
-let mainTask = document.querySelector('.main__tasks');
-let interplay = mainTask.querySelector('.interplay');
+const createNewTodo = document.querySelector('.block__input-text');
+const mainTask = document.querySelector('.main__tasks');
+const interplay = mainTask.querySelector('.interplay');
 
-
-createNewTodo.addEventListener('blur', function func() {
+createNewTodo.addEventListener('change', function() {
   let task = document.createElement('div');
   task.classList.add('block');
   task.classList.add('tasks__task');
@@ -39,18 +38,11 @@ createNewTodo.addEventListener('blur', function func() {
     task.remove();
   });
   this.value = '';
-  let element = mainTask.querySelectorAll('.block__input-checkbox');
+  const element = mainTask.querySelectorAll('.block__input-checkbox');
   let taskAmount = document.querySelector('.task__amount');
-  taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
+  if ([...element].filter((input) => input.checked === false).length === 1) {
+    taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} item left`;
+  } else {
+    taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
