@@ -59,14 +59,27 @@ createNewTodo.addEventListener('change', function() {
   //   task.remove();
   // });
   this.value = '';
-  const element = mainTask.querySelectorAll('.block__input-checkbox');
+  // const element = mainTask.querySelectorAll('.block__input-checkbox');
+  // let taskAmount = document.querySelector('.task__amount');
+  // if ([...element].filter((input) => input.checked === false).length === 1) {
+  //   taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} item left`;
+  // } else {
+  //   taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
+  // }
+  let element = mainTask.querySelectorAll('.block__input-checkbox');
+  let elem = mainTask.querySelector('.block__input-checkbox');
   let taskAmount = document.querySelector('.task__amount');
-  if ([...element].filter((input) => input.checked === false).length === 1) {
-    taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} item left`;
-  } else {
-    taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
-  }
+  elem.addEventListener('change', function() {
+    if ([...element].filter((input) => input.checked === false).length === 1) {
+        taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} item left`;
+      } else {
+        taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
+      }
+  });
 });
+
+
+
 
 
 
