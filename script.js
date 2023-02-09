@@ -6,23 +6,25 @@ const interplay = mainTask.querySelector('.interplay');
 createNewTodo.addEventListener('change', function() {
   const template = document.querySelector('#element')
   let span = template.content.querySelector('.task__description');
-  const button = template.content.querySelector('.task__button');
-  const div = template.content.querySelectorAll('div');
-  div.id = 'task';
-  let tasks = template.content.querySelectorAll('#task');
-  const input = template.content.querySelector('input');
-  const label  = template.content.querySelector('label');
-  span.textContent = createNewTodo.value;
-  button.addEventListener('click', function() {
-      console.log('привет');
-  });
+  let tasks = document.querySelectorAll('.tasks');
+  const input = template.content.querySelector('.block__input-checkbox');
+  const label = template.content.querySelector('.block__label');
   for ( let i = 0; i < tasks.length; i++) {
-    input.id = `checkbox${i + 1}`;
-    label.setAttribute('for', `checkbox${i + 1}`);
+      input.id = `checkbox${i + 1}`;
+      label.setAttribute('for', `checkbox${i + 1}`);
   }
 
+  span.textContent = createNewTodo.value;
+
+
   mainTask.insertAdjacentHTML('afterBegin', template.innerHTML);
-  console.log(div);
+  const button = document.querySelector('.task__button');
+  const task = document.querySelector('.task');
+  button.addEventListener('click', function() {
+    task.remove();
+  });
+
+
   // let task = document.createElement('div');
   // task.classList.add('block');
   // task.classList.add('tasks__task');
@@ -57,13 +59,14 @@ createNewTodo.addEventListener('change', function() {
   //   task.remove();
   // });
   this.value = '';
-});
-const element = mainTask.querySelectorAll('.block__input-checkbox');
+  const element = mainTask.querySelectorAll('.block__input-checkbox');
   let taskAmount = document.querySelector('.task__amount');
   if ([...element].filter((input) => input.checked === false).length === 1) {
     taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} item left`;
   } else {
     taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
   }
+});
+
 
 
