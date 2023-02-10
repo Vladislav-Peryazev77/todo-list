@@ -16,16 +16,55 @@ createNewTodo.addEventListener('change', function() {
 
   span.textContent = createNewTodo.value;
 
-
   mainTask.insertAdjacentHTML('afterBegin', template.innerHTML);
   const button = document.querySelector('.task__button');
   const task = document.querySelector('.task');
   button.addEventListener('click', function() {
     task.remove();
+    updateTaskAmount();
   });
+  this.value = '';
 
 
-  // let task = document.createElement('div');
+  let elem = mainTask.querySelector('.block__input-checkbox');
+  let taskAmount = document.querySelector('.task__amount');
+  elem.addEventListener('change', function() {
+    // const amount = checkAmountOfCheckbox();
+    // if (amount === 1) {taskAmount.textContent = `${amount} item left`};
+    // if (amount > 1) {taskAmount.textContent = `${amount} items left`};
+    // console.log(checkAmountOfCheckbox());
+    updateTaskAmount();
+  });
+  taskAmount.textContent = `${checkAmountOfCheckbox()} item left`;
+  // if (checkAmountOfCheckbox() === 0 ) {
+  //   taskAmount = '0 item left';
+  // }
+
+
+
+});
+function checkAmountOfCheckbox() {
+  let element = mainTask.querySelectorAll('.block__input-checkbox');
+  let count = [...element].filter((input) => input.checked === false).length;
+  return count;
+}
+function updateTaskAmount() {
+  const taskAmount = document.querySelector('.task__amount');
+  const amount = checkAmountOfCheckbox();
+  if (amount > 1) {
+    taskAmount.textContent = `${amount} items left`;
+  } else {
+    {taskAmount.textContent = `${amount} item left`}
+  }
+}
+
+
+
+
+
+
+
+// let task = document.createElement('div');
   // task.classList.add('block');
   // task.classList.add('tasks__task');
   // task.id = 'task';
@@ -58,7 +97,7 @@ createNewTodo.addEventListener('change', function() {
   // button.addEventListener('click', function() {
   //   task.remove();
   // });
-  this.value = '';
+
   // const element = mainTask.querySelectorAll('.block__input-checkbox');
   // let taskAmount = document.querySelector('.task__amount');
   // if ([...element].filter((input) => input.checked === false).length === 1) {
@@ -66,17 +105,6 @@ createNewTodo.addEventListener('change', function() {
   // } else {
   //   taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
   // }
-  let element = mainTask.querySelectorAll('.block__input-checkbox');
-  let elem = mainTask.querySelector('.block__input-checkbox');
-  let taskAmount = document.querySelector('.task__amount');
-  elem.addEventListener('change', function() {
-    if ([...element].filter((input) => input.checked === false).length === 1) {
-        taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} item left`;
-      } else {
-        taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
-      }
-  });
-});
 
 
 
