@@ -4,50 +4,44 @@ const mainTask = document.querySelector('.main__tasks');
 const interplay = mainTask.querySelector('.interplay');
 
 createNewTodo.addEventListener('change', function() {
+  // добавление такси
   const template = document.querySelector('#element')
   let span = template.content.querySelector('.task__description');
   let tasks = document.querySelectorAll('.tasks');
   const input = template.content.querySelector('.block__input-checkbox');
   const label = template.content.querySelector('.block__label');
+  // цикл для смены id и for, чтобы чекбоксы работали исправно
   for ( let i = 0; i < tasks.length; i++) {
       input.id = `checkbox${i + 1}`;
       label.setAttribute('for', `checkbox${i + 1}`);
   }
-
   span.textContent = createNewTodo.value;
-
   mainTask.insertAdjacentHTML('afterBegin', template.innerHTML);
   const button = document.querySelector('.task__button');
   const task = document.querySelector('.task');
+  // кнопка удаления таски
   button.addEventListener('click', function() {
     task.remove();
+    // обновление инфы для счетчика
     updateTaskAmount();
   });
   this.value = '';
-
-
   let elem = mainTask.querySelector('.block__input-checkbox');
   let taskAmount = document.querySelector('.task__amount');
+  // обновление инфы для счетчика
   elem.addEventListener('change', function() {
-    // const amount = checkAmountOfCheckbox();
-    // if (amount === 1) {taskAmount.textContent = `${amount} item left`};
-    // if (amount > 1) {taskAmount.textContent = `${amount} items left`};
-    // console.log(checkAmountOfCheckbox());
     updateTaskAmount();
   });
+  // обновление инфы для счетчика
   taskAmount.textContent = `${checkAmountOfCheckbox()} item left`;
-  // if (checkAmountOfCheckbox() === 0 ) {
-  //   taskAmount = '0 item left';
-  // }
-
-
-
 });
+// функция для подсчета оставшихся задачь
 function checkAmountOfCheckbox() {
   let element = mainTask.querySelectorAll('.block__input-checkbox');
   let count = [...element].filter((input) => input.checked === false).length;
   return count;
 }
+// функция для обновления инфы о оставшихся задачах
 function updateTaskAmount() {
   const taskAmount = document.querySelector('.task__amount');
   const amount = checkAmountOfCheckbox();
@@ -57,71 +51,52 @@ function updateTaskAmount() {
     {taskAmount.textContent = `${amount} item left`}
   }
 }
+// кнопка удаления всех выполненых задач
 const clearComleted = document.querySelector('.task__clear');
 clearComleted.addEventListener('click', function() {
   const input = mainTask.querySelectorAll('.block__input-checkbox');
-  const checkedInputs = [...input].filter((input) => input.checked === true);
   const tasks = document.querySelectorAll('.task');
   const completedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked);
   for ( let task of completedTask) {
     task.remove();
   }
-
-
-
-
 });
-
-
-
-
-
-
-
-// let task = document.createElement('div');
-  // task.classList.add('block');
-  // task.classList.add('tasks__task');
-  // task.id = 'task';
-  // mainTask.insertAdjacentElement('afterBegin', task);
-  // let input = document.createElement('input');
-  // input.setAttribute('type', 'checkbox');
-  // input.classList.add('block__input-checkbox');
-  // task.insertAdjacentElement('afterBegin', input);
-  // let label = document.createElement('label');
-  // label.classList.add('block__label');
-  // task.insertAdjacentElement('beforeEnd', label);
-  // let tasks = document.querySelectorAll('#task');
-  // for ( let i = 0; i < tasks.length; i++) {
-  //   input.id = `checkbox${i + 1}`;
-  //   label.setAttribute('for', `checkbox${i + 1}`);
-  // }
-  // let span = document.createElement('span');
-  // span.classList.add('task__description');
-  // span.textContent = this.value;
-  // task.insertAdjacentElement('beforeEnd', span);
-  // let button = document.createElement('button');
-  // button.classList.add('task__button');
-  // task.insertAdjacentElement('beforeEnd', button);
-  // let div1 = document.createElement('div');
-  // let div2 = document.createElement('div');
-  // div1.classList.add('mark1');
-  // div2.classList.add('mark2');
-  // button.insertAdjacentElement('afterBegin', div1);
-  // button.insertAdjacentElement('beforeEnd', div2);
-  // button.addEventListener('click', function() {
-  //   task.remove();
-  // });
-
-  // const element = mainTask.querySelectorAll('.block__input-checkbox');
-  // let taskAmount = document.querySelector('.task__amount');
-  // if ([...element].filter((input) => input.checked === false).length === 1) {
-  //   taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} item left`;
-  // } else {
-  //   taskAmount.textContent = `${[...element].filter((input) => input.checked === false).length} items left`;
-  // }
-
-
-
-
-
-
+const allTasks = document.querySelector('.interaction__select-all');
+const activeTasks = document.querySelector('.interaction__select-active');
+const completedTasks = document.querySelector('.interaction__select-completed');
+// кнопка чтобы были видны все задачи
+allTasks.addEventListener('click', function() {
+  const tasks = document.querySelectorAll('.task');
+  for (let task of tasks) {
+    task.classList.remove('hidden-tasks');
+    task.classList.add('all-tasks');
+  }
+});
+// кнопка чтобы были видны только не выполненные задачи
+activeTasks.addEventListener('click', function() {
+  const input = mainTask.querySelectorAll('.block__input-checkbox');
+  const tasks = document.querySelectorAll('.task');
+  const completedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked);
+  for ( let task of completedTask) {
+    task.classList.remove('all-tasks');
+    task.classList.add('hidden-tasks')
+  }
+  const unCompletedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked === false);
+  for ( let task of unCompletedTask) {
+    task.classList.remove('hidden-tasks');
+  }
+});
+// кнопка чтобы были видны только выполненные задачи
+completedTasks.addEventListener('click', function() {
+  const input = mainTask.querySelectorAll('.block__input-checkbox');
+  const tasks = document.querySelectorAll('.task');
+  const unCompletedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked === false);
+  for ( let task of unCompletedTask) {
+    task.classList.remove('all-tasks');
+    task.classList.toggle('hidden-tasks');
+  }
+  const completedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked);
+  for ( let task of completedTask) {
+    task.classList.remove('hidden-tasks');
+  }
+});

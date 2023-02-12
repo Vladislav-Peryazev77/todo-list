@@ -200,6 +200,12 @@
   text-decoration-line: line-through;
   color: #D1D2DA;
 }
+.hidden-tasks {
+  display: none;
+}
+.all-tasks {
+  display: flex;
+}
 @media (min-width: 640px) {
  .header {
    padding: 70px 0 78px;
