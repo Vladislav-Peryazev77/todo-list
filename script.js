@@ -57,6 +57,20 @@ function updateTaskAmount() {
     {taskAmount.textContent = `${amount} item left`}
   }
 }
+const clearComleted = document.querySelector('.task__clear');
+clearComleted.addEventListener('click', function() {
+  const input = mainTask.querySelectorAll('.block__input-checkbox');
+  const checkedInputs = [...input].filter((input) => input.checked === true);
+  const tasks = document.querySelectorAll('.task');
+  const completedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked);
+  for ( let task of completedTask) {
+    task.remove();
+  }
+
+
+
+
+});
 
 
 
