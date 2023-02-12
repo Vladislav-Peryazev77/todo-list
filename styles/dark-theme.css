@@ -5,13 +5,13 @@
 }
 body {
   transition: 1s;
-  background: #FAFAFA;
+  background-color:#171823;
 }
  * {
   box-sizing:  border-box;
  }
 .header {
-  background-image: url('../images/bgimageLarge.jpg');
+  background-image: url('../images/gbimageDark.jpg');
   background-size: cover;
   padding: 48px 24px 44px;
   transition: 1s;
@@ -28,14 +28,14 @@ body {
   width: 20px;
   height: 20px;
   border: none;
-  background: url('../images/crescent.svg') no-repeat top right;
+  background: url('../images/sun.svg') no-repeat top right;
 }
 .block {
   width: 100%;
   padding: 16px 20px;
   display: flex;
   align-items: center;
-  background: #FFFFFF;
+  background: #25273D;
   border-radius: 5px;
 }
 .block__input-checkbox[type="checkbox"] {
@@ -50,7 +50,7 @@ body {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: solid 1px #E3E4F1;
+	border: solid 1px #393A4B;
 	transition: 0.5s;
 }
 .block__input-checkbox[type="checkbox"]:checked + .block__label::before {
@@ -58,6 +58,7 @@ body {
 	background-size: 100%;
 }
 .block__input-text {
+  background-color: #25273D;
   padding: 0;
   border: none;
   font-style: normal;
@@ -65,25 +66,25 @@ body {
   font-size: 12px;
   line-height: 12px;
   letter-spacing: -0.166667px;
-  color: #9495A5;
+  color: #767992;
   outline: none;
   margin-left: 12px;
   width: 100%;
 }
 .main {
-  background: #FAFAFA;
+  background: #171823;
   padding: 0 24px;
   transition: 1s;
 }
 .main__tasks {
   position: relative;
   top: -25px;
-  box-shadow: 5px 5px 5px rgba(194, 195, 214, 0.5);
+  box-shadow: 5px 5px 5px rgba(37, 35, 35, 0.5);
   margin-bottom: -9px;
 }
 .tasks__task {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #E3E4F1;
+  background-color: #25273D;
+  border-bottom: 1px solid #393A4B;
   display: flex;
   justify-content: space-between;
 }
@@ -97,12 +98,12 @@ body {
   font-size: 12px;
   line-height: 12px;
   letter-spacing: -0.166667px;
-  color: #494C6B;
+  color: #C8CBE7;
   margin-left: 12px;
 }
 .task__button {
   border: none;
-  background: #fff;
+  background: #25273D;
   margin-left: auto;
 }
 .task__amount {
@@ -111,7 +112,7 @@ body {
   font-size: 12px;
   line-height: 12px;
   letter-spacing: -0.166667px;
-  color: #9495A5;
+  color: #5B5E7E;
 }
 .task__clear {
   margin-left: auto;
@@ -132,8 +133,8 @@ body {
   line-height: 14px;
   letter-spacing: -0.194444px;
   color: #9495A5;
-  box-shadow: 5px 5px 5px rgba(194, 195, 214, 0.5);
-  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(27, 27, 31, 0.5);
+  background-color: #25273D;
 }
 .interaction__content {
   width: 100%;
@@ -175,27 +176,13 @@ body {
 }
 .interaction__select-all, .interaction__select-active, .interaction__select-completed {
   border: none;
-  background-color: #fff;
+  background-color: #25273D;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 14px;
   letter-spacing: -0.194444px;
   color: #9495A5;
-}
-.mark1 {
-  width: 0.2px;
-  height: 24px;
-  border: 1px solid #979797;
-  transform: rotate(-45deg);
-  position: absolute;
-}
-.mark2 {
-  width: 0.2px;
-  height: 24px;
-  background: #D8D8D8;
-  border: 1px solid #979797;
-  transform: rotate(45deg);
 }
 .span-done {
   text-decoration: line-through;
@@ -204,7 +191,7 @@ body {
   text-decoration: line-through;
   letter-spacing: -0.25px;
   text-decoration-line: line-through;
-  color: #D1D2DA;
+  color: #4D5067;
 }
 .hidden-tasks {
   display: none;
@@ -212,9 +199,7 @@ body {
 .all-tasks {
   display: flex;
 }
-.selected {
-  color: #3A7CFD;
-}
+
 @media (min-width: 640px) {
  .header {
    padding: 70px 0 78px;
@@ -249,23 +234,32 @@ body {
    letter-spacing: -0.25px;
  }
  .task__clear {
-   margin: 0;
-   font-size: 14px;
- }
- .task__amount {
+  margin: 0;
   font-size: 14px;
- }
- .task__clear:hover {
-  color: #494C6B;
- }
+  color: #5B5E7E;
+  }
+  .task__amount {
+  font-size: 14px;
+  color: #5B5E7E;
+  }
  .footer {
    margin-top: 24px;
  }
  ul {
+  background-color: #25273D;
   padding: 0;
  }
+ .interaction__select-all, .interaction__select-active, .interaction__select-completed {
+  color: #5B5E7E;
+ }
  .task__clear:hover, .interaction__select-all:hover, .interaction__select-active:hover, .interaction__select-completed:hover {
-  color: #494C6B;
+  color: #E3E4F1;
   cursor: url('../images/pointer.svg'), auto;
  }
+ .footer__interaction {
+  color: #5B5E7E;
+ }
+}
+.selected {
+  color: #3A7CFD;
 }

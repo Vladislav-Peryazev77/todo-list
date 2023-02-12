@@ -71,6 +71,10 @@ allTasks.addEventListener('click', function() {
     task.classList.remove('hidden-tasks');
     task.classList.add('all-tasks');
   }
+  completedTasks.classList.remove('selected');
+  activeTasks.classList.remove('selected');
+  allTasks.classList.add('selected');
+
 });
 // кнопка чтобы были видны только не выполненные задачи
 activeTasks.addEventListener('click', function() {
@@ -85,6 +89,10 @@ activeTasks.addEventListener('click', function() {
   for ( let task of unCompletedTask) {
     task.classList.remove('hidden-tasks');
   }
+  allTasks.classList.remove('selected');
+  completedTasks.classList.remove('selected');
+  activeTasks.classList.add('selected');
+
 });
 // кнопка чтобы были видны только выполненные задачи
 completedTasks.addEventListener('click', function() {
@@ -99,4 +107,67 @@ completedTasks.addEventListener('click', function() {
   for ( let task of completedTask) {
     task.classList.remove('hidden-tasks');
   }
+  allTasks.classList.remove('selected');
+  activeTasks.classList.remove('selected');
+  completedTasks.classList.add('selected');
+});
+// кнопка смены темы
+const themeSwitcher = document.querySelector('.header__button');
+themeSwitcher.addEventListener('click', function() {
+  let theme = document.getElementById('theme');
+  if ( theme.getAttribute('href') == './styles/styles.css') {
+    theme.href = './styles/dark-theme.css';
+  } else {
+    theme.href = './styles/styles.css'
+  }
+});
+// из-за того что я объединял блоки в один на декстопной версии нужно
+// привязать события и к тому блоку который идет отдельно в мобильной версии
+const allTasksMobile = document.querySelector('.mobile-interaction__select-all');
+const activeTasksMobile = document.querySelector('.mobile-interaction__select-active');
+const completedTasksMobile = document.querySelector('.mobile-interaction__select-completed');
+// кнопка чтобы были видны все задачи на мобильной версии
+allTasksMobile.addEventListener('click', function() {
+  const tasks = document.querySelectorAll('.task');
+  for (let task of tasks) {
+    task.classList.remove('hidden-tasks');
+    task.classList.add('all-tasks');
+  }
+  completedTasksMobile.classList.remove('selected');
+  activeTasksMobile.classList.remove('selected');
+  allTasksMobile.classList.add('selected');
+});
+// кнопка чтобы были видны только не выполненные задачи на мобильной версии
+activeTasksMobile.addEventListener('click', function() {
+  const input = mainTask.querySelectorAll('.block__input-checkbox');
+  const tasks = document.querySelectorAll('.task');
+  const completedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked);
+  for ( let task of completedTask) {
+    task.classList.remove('all-tasks');
+    task.classList.add('hidden-tasks')
+  }
+  const unCompletedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked === false);
+  for ( let task of unCompletedTask) {
+    task.classList.remove('hidden-tasks');
+  }
+  allTasksMobile.classList.remove('selected');
+  completedTasksMobile.classList.remove('selected');
+  activeTasksMobile.classList.add('selected');
+});
+// кнопка чтобы были видны только выполненные задачи на мобильной версии
+completedTasksMobile.addEventListener('click', function() {
+  const input = mainTask.querySelectorAll('.block__input-checkbox');
+  const tasks = document.querySelectorAll('.task');
+  const unCompletedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked === false);
+  for ( let task of unCompletedTask) {
+    task.classList.remove('all-tasks');
+    task.classList.toggle('hidden-tasks');
+  }
+  const completedTask = [...tasks].filter((task) => task.querySelector('.block__input-checkbox').checked);
+  for ( let task of completedTask) {
+    task.classList.remove('hidden-tasks');
+  }
+  allTasksMobile.classList.remove('selected');
+  activeTasksMobile.classList.remove('selected');
+  completedTasksMobile.classList.add('selected');
 });
