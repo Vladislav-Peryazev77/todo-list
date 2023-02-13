@@ -87,6 +87,7 @@ body {
   border-bottom: 1px solid #393A4B;
   display: flex;
   justify-content: space-between;
+
 }
 .tasks__task:hover {
   cursor: url('../images/pointer.svg'), auto;

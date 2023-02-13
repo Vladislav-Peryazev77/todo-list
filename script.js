@@ -4,7 +4,7 @@ const mainTask = document.querySelector('.main__tasks');
 const interplay = mainTask.querySelector('.interplay');
 
 createNewTodo.addEventListener('change', function() {
-  // добавление такси
+  // добавление таски
   const template = document.querySelector('#element')
   let span = template.content.querySelector('.task__description');
   let tasks = document.querySelectorAll('.tasks');
@@ -34,6 +34,23 @@ createNewTodo.addEventListener('change', function() {
   });
   // обновление инфы для счетчика
   taskAmount.textContent = `${checkAmountOfCheckbox()} item left`;
+  // добавил возможность редактировать текст таски
+  const spans = document.querySelectorAll('.task__description');
+  spans.forEach((span) => {
+    span.addEventListener('click', function func() {
+      let input = document.createElement('input');
+      input.value = span.textContent;
+      span.textContent = '';
+      span.appendChild(input);
+      // input.focus();
+
+      input.addEventListener('change', function() {
+        span.textContent = this.value;
+        span.addEventListener('click', func)
+      });
+      span.removeEventListener('click', func);
+    });
+  });
 });
 // функция для подсчета оставшихся задачь
 function checkAmountOfCheckbox() {
@@ -171,3 +188,4 @@ completedTasksMobile.addEventListener('click', function() {
   activeTasksMobile.classList.remove('selected');
   completedTasksMobile.classList.add('selected');
 });
+
