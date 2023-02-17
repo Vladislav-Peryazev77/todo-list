@@ -131,11 +131,10 @@ completedTasks.addEventListener('click', function() {
 // кнопка смены темы
 const themeSwitcher = document.querySelector('.header__button');
 themeSwitcher.addEventListener('click', function() {
-  let theme = document.getElementById('theme');
-  if ( theme.getAttribute('href') == './styles/styles.css') {
-    theme.href = './styles/dark-theme.css';
-  } else {
-    theme.href = './styles/styles.css'
+  if (document.body.hasAttribute('dark') === false) {
+    document.body.setAttribute('dark', '');
+  } else if (document.body.hasAttribute('dark') === true){
+    document.body.removeAttribute('dark');
   }
 });
 // из-за того что я объединял блоки в один на декстопной версии нужно
