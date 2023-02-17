@@ -42,8 +42,8 @@ createNewTodo.addEventListener('change', function() {
       input.value = span.textContent;
       span.textContent = '';
       span.appendChild(input);
-      // input.focus();
-
+      // input.focus(); пытался сделать чтобы по клику на спан фокус
+      // ставился на инпут, но тогда все ломается
       input.addEventListener('change', function() {
         span.textContent = this.value;
         span.addEventListener('click', func)
