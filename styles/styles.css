@@ -78,7 +78,7 @@ body {
 }
 .block {
   width: 100%;
-  padding: 16px 20px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   background: var(--block-bg);
@@ -179,8 +179,8 @@ body {
   line-height: 14px;
   letter-spacing: -0.194444px;
   color: var(--task-interaction);
-  box-shadow: 5px 5px 5px rgba(194, 195, 214, 0.5);
-  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(50, 50, 54, 0.5);
+  background-color: var(--interaction-bg);
 }
 .interaction__content {
   width: 100%;
@@ -248,6 +248,31 @@ body {
 .selected {
   color: #3A7CFD;
 }
+.block__button {
+  min-width: 90px;
+  display: inline-block;
+  padding: 2px 20px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px #999;
+}
+
+.block__button:hover {
+  background: linear-gradient(135deg, #7bdff8 0%, #cd76f8 100%);
+}
+
+.block__button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
 @media (min-width: 640px) {
  .header {
    padding: 70px 0 78px;
@@ -259,7 +284,7 @@ body {
  .block {
    max-width: 540px;
    margin: 0 auto;
-   padding: 20px 24px;
+   padding: 17px 24px;
  }
  .main__tasks {
    max-width: 540px;
@@ -280,6 +305,10 @@ body {
    font-size: 18px;
    line-height: 18px;
    letter-spacing: -0.25px;
+ }
+ .block__input-text {
+  margin-left: 60px;
+  /* margin-right: 150px; */
  }
  .task__clear {
    margin: 0;
@@ -304,4 +333,16 @@ body {
   color: var(--interaction-hover);
   cursor: url('../images/pointer.svg'), auto;
  }
+ .block__button {
+  padding: 5px;
+  min-width: 150px;
+  font-size: 16px;
+  box-shadow: 0 3.5px #999;
+ }
+ .block__button:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+ }
 }
+
+
