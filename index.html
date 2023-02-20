@@ -19,73 +19,14 @@
           <button class="header__button"></button>
         </div>
         <div class="block">
-          <input type="checkbox" id="checkbox1" class="block__input-checkbox">
-          <label class="block__label" for="checkbox1"></label>
-          <input class="block__input-text" type="text" placeholder="Create a new todo…">
+          <form action="" class="block__form">
+            <!-- <div>//svg</div> -->
+            <input class="block__input-text" type="text" placeholder="Create a new todo…">
+          </form>
         </div>
       </header>
       <main class="main">
         <div class="main__tasks">
-          <div class="block tasks__task">
-            <input type="checkbox" id="checkbox2" class="block__input-checkbox">
-            <label class="block__label" for="checkbox2"></label>
-            <span class="task__description">Complete online JavaScript course</span>
-            <button class="task__button">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7851 0.471404L11.3137 0L5.89256 5.42115L0.471404 0L0 0.471404L5.42115 5.89256L0 11.3137L0.471404 11.7851L5.89256 6.36396L11.3137 11.7851L11.7851 11.3137L6.36396 5.89256L11.7851 0.471404Z" fill="#494C6B"/>
-                </svg>
-            </button>
-          </div>
-          <div class="block tasks__task">
-            <input type="checkbox" id="checkbox3" class="block__input-checkbox">
-            <label class="block__label" for="checkbox3"></label>
-            <span class="task__description">Jog around the park 3x</span>
-            <button class="task__button">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7851 0.471404L11.3137 0L5.89256 5.42115L0.471404 0L0 0.471404L5.42115 5.89256L0 11.3137L0.471404 11.7851L5.89256 6.36396L11.3137 11.7851L11.7851 11.3137L6.36396 5.89256L11.7851 0.471404Z" fill="#494C6B"/>
-                </svg>
-            </button>
-          </div>
-          <div class="block tasks__task">
-            <input type="checkbox" id="checkbox4" class="block__input-checkbox">
-            <label class="block__label" for="checkbox4"></label>
-            <span class="task__description">10 minutes meditation</span>
-            <button class="task__button">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7851 0.471404L11.3137 0L5.89256 5.42115L0.471404 0L0 0.471404L5.42115 5.89256L0 11.3137L0.471404 11.7851L5.89256 6.36396L11.3137 11.7851L11.7851 11.3137L6.36396 5.89256L11.7851 0.471404Z" fill="#494C6B"/>
-                </svg>
-            </button>
-          </div>
-          <div class="block tasks__task">
-            <input type="checkbox" id="checkbox5" class="block__input-checkbox">
-            <label class="block__label" for="checkbox5"></label>
-            <span class="task__description">Read for 1 hour</span>
-            <button class="task__button">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7851 0.471404L11.3137 0L5.89256 5.42115L0.471404 0L0 0.471404L5.42115 5.89256L0 11.3137L0.471404 11.7851L5.89256 6.36396L11.3137 11.7851L11.7851 11.3137L6.36396 5.89256L11.7851 0.471404Z" fill="#494C6B"/>
-                </svg>
-            </button>
-          </div>
-          <div class="block tasks__task">
-            <input type="checkbox" id="checkbox6" class="block__input-checkbox">
-            <label class="block__label" for="checkbox6"></label>
-            <span class="task__description">Pick up groceries</span>
-            <button class="task__button">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7851 0.471404L11.3137 0L5.89256 5.42115L0.471404 0L0 0.471404L5.42115 5.89256L0 11.3137L0.471404 11.7851L5.89256 6.36396L11.3137 11.7851L11.7851 11.3137L6.36396 5.89256L11.7851 0.471404Z" fill="#494C6B"/>
-                </svg>
-            </button>
-          </div>
-          <div class="block tasks__task">
-            <input type="checkbox" id="checkbox7" class="block__input-checkbox">
-            <label class="block__label" for="checkbox7"></label>
-            <span class="task__description">Complete Todo App on Frontend Mentor</span>
-            <button class="task__button">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7851 0.471404L11.3137 0L5.89256 5.42115L0.471404 0L0 0.471404L5.42115 5.89256L0 11.3137L0.471404 11.7851L5.89256 6.36396L11.3137 11.7851L11.7851 11.3137L6.36396 5.89256L11.7851 0.471404Z" fill="#494C6B"/>
-                </svg>
-            </button>
-          </div>
           <div class="block tasks__task">
             <span class="task__amount">
               5 items left
@@ -136,6 +77,19 @@
         </span>
       </footer>
     </div>
+    <template id="task-template">
+      <div class="block tasks__task">
+        <input type="checkbox" id="checkbox2" class="block__input-checkbox">
+        <label class="block__label" for="checkbox2"></label>
+        <span class="task__description">Complete online JavaScript course</span>
+        <button class="task__button">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7851 0.471404L11.3137 0L5.89256 5.42115L0.471404 0L0 0.471404L5.42115 5.89256L0 11.3137L0.471404 11.7851L5.89256 6.36396L11.3137 11.7851L11.7851 11.3137L6.36396 5.89256L11.7851 0.471404Z" fill="#494C6B"/>
+            </svg>
+        </button>
+      </div>
+    </template>
+    <script src="./js/index.js"></script>
   </body>
 </html>
 
