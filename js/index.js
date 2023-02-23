@@ -60,11 +60,38 @@ function renderTask(taskDecription) {
   tasksListElement.prepend(taskElement);
 }
 
-function renderTasks(tasksList) {
-  tasksList.forEach(renderTask);
-}
+// function renderTasks(tasksList) {
+//   tasksList.forEach(renderTask);
+// }
 
-renderTasks(tasksList);
+// renderTasks(tasksList);
+
+
+const TODOS_URL = 'https://jsonplaceholder.typicode.com/todos';
+
+
+function getAllTodos() {
+  const result = fetch(TODOS_URL, {
+    method: 'GET',
+  });
+  result
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Ошибка запроса')
+          }
+          return response.json();
+        })
+        .then((todos) => {
+          console.log(todos);
+          todos.forEach((todo) => {
+            const todoHTML = renderTask(todo.title);
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+};
+getAllTodos();
 
 
 
