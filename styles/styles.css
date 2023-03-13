@@ -68,8 +68,11 @@
   letter-spacing: -0.166667px;
   color: #9495A5;
   outline: none;
-  margin-left: 12px;
+  /* margin-left: 12px; */
   width: 100%;
+}
+.block__input_hidden {
+  display: none;
 }
 .main {
   background: #FAFAFA;
@@ -219,6 +222,9 @@
    font-size: 18px;
    line-height: 18px;
    letter-spacing: -0.25px;
+ }
+ .block__input-text {
+  margin-left: 0;
  }
  .task__clear {
    margin: 0;

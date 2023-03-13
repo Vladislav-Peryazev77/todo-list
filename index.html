@@ -20,7 +20,9 @@
         </div>
         <div class="block">
           <form action="" class="block__form">
-            <!-- <div>//svg</div> -->
+            <!-- <div><svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9.5" stroke="#E3E4F1"/>
+              </svg></div> -->
             <input class="block__input-text" type="text" placeholder="Create a new todo…">
           </form>
         </div>
@@ -80,6 +82,7 @@
     <template id="task-template">
       <div class="block tasks__task">
         <input type="checkbox" id="checkbox2" class="block__input-checkbox">
+        <input class="block__input block__input_hidden" type="text">
         <label class="block__label" for="checkbox2"></label>
         <span class="task__description">Complete online JavaScript course</span>
         <button class="task__button">
