@@ -246,7 +246,7 @@ body {
   display: flex;
 }
 .selected {
-  color: #3A7CFD;
+  color: #0bef63;
 }
 .block__button {
   min-width: 90px;
@@ -258,19 +258,17 @@ body {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+  background-color:#0bef63;
   border: none;
   border-radius: 5px;
-  box-shadow: 0 2px #999;
 }
 
 .block__button:hover {
-  background: linear-gradient(135deg, #7bdff8 0%, #cd76f8 100%);
+  background-color: #0bef63;
 }
 
 .block__button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 1px #666;
+  background-color: #0bef63;
   transform: translateY(2px);
 }
 @media (min-width: 640px) {
@@ -308,7 +306,7 @@ body {
  }
  .block__input-text {
   margin-left: 60px;
-  /* margin-right: 150px; */
+  /* margin-right: 150px;*/
  }
  .task__clear {
    margin: 0;
@@ -334,13 +332,12 @@ body {
   cursor: url('../images/pointer.svg'), auto;
  }
  .block__button {
+  font-family: sans-serif;
   padding: 5px;
   min-width: 150px;
   font-size: 16px;
-  box-shadow: 0 3.5px #999;
  }
  .block__button:active {
-  box-shadow: 0 2px #666;
   transform: translateY(4px);
  }
 }
